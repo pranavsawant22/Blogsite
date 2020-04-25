@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%load crispy_forms_tags%}
+
+{%block content%}
+
+<div class="content-section">
+    <form method="POST">
+        {%csrf_token%}
+        <fieldset class="form-group">
+            <legend class = " border-bottom mb-4">Blog Post</legend>
+
+            {{ form|crispy}}
+
+        </fieldset>
+        <div class="form-group">
+            <a href="/home"> <button class="btn btn-outline-info" type="submit">Post</button></a>
+
+        </div>
+        <div class="text">
+           <p align="right"> <font size="1">* fields are compulsory</font>
+                </p>
+        </div>
+
+    </form>
+</div>
+
+{%endblock%}
+
+</html>
